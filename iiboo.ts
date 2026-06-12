@@ -12,6 +12,8 @@ declare var getRPCGunTarget: any;
 declare var selectedNetPlayer: any;
 declare var headTransform: any;
 declare var getRightFingers: any;
+declare var setTimeout: any;
+declare var File: any;
 
 Il2Cpp.$config.exports = {
 	il2cpp_init: () => Il2Cpp.module.findExportByName("rMNVufdfVZu"),
@@ -809,6 +811,19 @@ const VFXTypes = {
     FuelExplosion: 183
 };
 const version = "1.0.0";
+
+console.log([
+    "===============================================================",
+    "  ____    _    ____  _____    _    _   _ ____    ____  _  ___ ",
+    " |  _ \\  / \\  | __ )| ____|  / \\  | \\ | / ___|  / ___|| |/ / |",
+    " | | | |/ _ \\ |  _ \\|  _|   / _ \\ |  \\| \\___ \\  \\___ \\| ' /| |",
+    " | |_| / ___ \\| |_) | |___ / ___ \\| |\\  |___) |  ___) | . \\| |",
+    " |____/_/   \\_\\____/|_____/_/   \\_\\_| \\_|____/  |____/|_|\\_\\_|",
+    " ",
+    "   ---- DABEANS SKIDS MENU ----",
+    `   version: ${version}`,
+    "==============================================================="
+].join("\n"));
 const menuName = "II Boo";
 
 let menu = null;
@@ -9092,7 +9107,6 @@ new ButtonInfo({
 
 new ButtonInfo({
     buttonText: "Piss Mod",
-    buttonColor: { r: 1, g: 0.85, b: 0.1, a: 1 },
     enableMethod: () => { goopSpamDelay = 0; sendNotification("Piss Mod ON", false); },
     disableMethod: () => { sendNotification("Piss Mod OFF", false); },
     isTogglable: true,
@@ -12579,7 +12593,7 @@ new ButtonInfo({
                     if (rightTrigger && time > lagGunDelay) {
                         lagGunDelay = time + 0.5;
                         try {
-                            const hitPt = gunData.hitPoint ?? gunData.tip;
+                            const hitPt = gunData.endPosition;
                             for (const p of getAllNetPlayersList(false)) {
                                 try { p.method("RPC_Teleport").invoke(hitPt); } catch(_) {}
                             }
