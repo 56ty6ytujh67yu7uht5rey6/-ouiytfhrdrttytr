@@ -26511,17 +26511,17 @@ function blockrpc() {
                 if (this.method("get_IsMine").invoke()) {
                     const x = position.field("x").value.toFixed(2);
                     const y = position.field("y").value.toFixed(2);
-                    const z = position.field("z").value.toFixed(2);
+                      const z = position.field("z").value.toFixed(2);
                     console.log("[LOGCAT] Teleport (" + x + "," + y + "," + z + ")");
                 }
             } catch(_) {}
             return this.method("RPC_Teleport").invoke(position);
         };
     } catch(e) { console.error("[blockrpc] RPC_Teleport:", e); }
-
-    
-    try {
-        NetPlayerCls.method("RPC_PlayerStun").implementation = function(position, stunRange, duration, attenType) {
+}
+blockrpc();
+});
+    NetPlayerCls.method("RPC_PlayerStun").implementation = function(position, stunRange, duration, attenType) {
             if (shouldBlock(this)) return;
             return this.method("RPC_PlayerStun").invoke(position, stunRange, duration, attenType);
         };
