@@ -1,6 +1,17 @@
 declare const Il2Cpp: any;
 declare const console: any;
 declare const XRNode: any;
+declare var AnimalCompany: any;
+declare var GorillaLocomotion: any;
+declare var GameManager: any;
+declare var buttonSound: any;
+declare var infHealthEnabled: any;
+declare var playSelectedVFXAt: any;
+declare var playSelectedVfxAt: any;
+declare var getRPCGunTarget: any;
+declare var selectedNetPlayer: any;
+declare var headTransform: any;
+declare var getRightFingers: any;
 
 Il2Cpp.$config.exports = {
 	il2cpp_init: () => Il2Cpp.module.findExportByName("rMNVufdfVZu"),
