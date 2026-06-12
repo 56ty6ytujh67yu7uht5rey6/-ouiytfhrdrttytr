@@ -1,0 +1,18 @@
+{
+  "name": "ii-salmon",
+  "version": "1.0.0",
+  "main": "frida-il2cpp-bridge.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "frida-il2cpp-bridge": "^0.13.1"
+  },
+  "devDependencies": {
+    "frida-compile": "^19.0.5"
+  }
+}

@@ -1,0 +1,21 @@
+node_modules/
+dist/
+build/
+*.js.map
+*.d.ts
+
+# IiBooLoader build artifacts
+IiBooLoader/bin/
+IiBooLoader/obj/
+
+# VS files
+.vs/
+*.user
+*.suo
+
+# OS
+Thumbs.db
+.DS_Store
+
+# frida bridge (large, fetched at runtime)
+frida-il2cpp-bridge.js
